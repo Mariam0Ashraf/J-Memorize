@@ -775,9 +775,40 @@ public class MainFrame extends JFrame implements CategoryObserver,
      */
     private void toggleDarkMode() {
         isDarkMode = !isDarkMode;
+        Color darkGray = new Color(40, 40, 40); // Darker shade of gray
+        Color lighterGray = new Color(60, 60, 60); // Lighter shade of gray
+        Color veryLightGray = new Color(100, 100, 100); // Very light shade of gray
+
         if (isDarkMode) {
             // Apply dark mode colors
-            UIManager.put("Panel.background", new ColorUIResource(Color.BLACK));
+            UIManager.put("Panel.background", new ColorUIResource(darkGray));
+            UIManager.put("Label.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("Separator.foreground", new ColorUIResource(lighterGray));
+            UIManager.put("Menu.background", new ColorUIResource(darkGray));
+            UIManager.put("MenuBar.background", new ColorUIResource(darkGray));
+            UIManager.put("MenuItem.background", new ColorUIResource(darkGray));
+            UIManager.put("MenuItem.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("CheckBoxMenuItem.background", new ColorUIResource(darkGray));
+            UIManager.put("CheckBoxMenuItem.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("Button.background", new ColorUIResource(darkGray));
+            UIManager.put("Button.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("TextField.background", new ColorUIResource(lighterGray));
+            UIManager.put("TextField.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("TextArea.background", new ColorUIResource(lighterGray));
+            UIManager.put("TextArea.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("ComboBox.background", new ColorUIResource(lighterGray));
+            UIManager.put("ComboBox.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("Table.background", new ColorUIResource(darkGray));
+            UIManager.put("Table.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("TableHeader.background", new ColorUIResource(lighterGray));
+            UIManager.put("TableHeader.foreground", new ColorUIResource(Color.WHITE));
+
+
+            // Additional colors for deck chart, cards window, and card summary
+            UIManager.put("ScrollPane.background", new ColorUIResource(darkGray));
+            UIManager.put("ScrollPane.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("Viewport.background", new ColorUIResource(darkGray));
+            UIManager.put("Label.background", new ColorUIResource(darkGray));
             UIManager.put("Label.foreground", new ColorUIResource(Color.WHITE));
             UIManager.put("Button.background", new ColorUIResource(Color.DARK_GRAY));
             UIManager.put("Button.foreground", new ColorUIResource(Color.WHITE));
@@ -786,13 +817,39 @@ public class MainFrame extends JFrame implements CategoryObserver,
             // Apply light mode colors (you can define these)
             UIManager.put("Panel.background", new ColorUIResource(Color.WHITE));
             UIManager.put("Label.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("Separator.foreground", new ColorUIResource(Color.GRAY));
+            UIManager.put("Menu.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("MenuBar.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("MenuItem.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("MenuItem.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("CheckBoxMenuItem.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("CheckBoxMenuItem.foreground", new ColorUIResource(Color.BLACK));
             UIManager.put("Button.background", new ColorUIResource(Color.WHITE));
             UIManager.put("Button.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("TextField.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("TextField.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("TextArea.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("TextArea.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("ComboBox.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("ComboBox.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("Table.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("Table.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("TableHeader.background", new ColorUIResource(Color.GRAY));
+            UIManager.put("TableHeader.foreground", new ColorUIResource(Color.BLACK));
             // Add more UI component color changes as needed
+
+            // Additional colors for deck chart, cards window, and card summary
+            UIManager.put("ScrollPane.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("ScrollPane.foreground", new ColorUIResource(Color.BLACK));
+            UIManager.put("Viewport.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("Label.background", new ColorUIResource(Color.WHITE));
+            UIManager.put("Label.foreground", new ColorUIResource(Color.BLACK));
         }
         // Update the UI
         SwingUtilities.updateComponentTreeUI(this);
     }
+
+
 
 
     private JPanel buildOperationsBar() {
