@@ -810,6 +810,9 @@ public class MainFrame extends JFrame implements CategoryObserver,
             UIManager.put("Viewport.background", new ColorUIResource(darkGray));
             UIManager.put("Label.background", new ColorUIResource(darkGray));
             UIManager.put("Label.foreground", new ColorUIResource(Color.WHITE));
+            UIManager.put("Button.background", new ColorUIResource(Color.DARK_GRAY));
+            UIManager.put("Button.foreground", new ColorUIResource(Color.WHITE));
+            // Add more UI component color changes as needed
         } else {
             // Apply light mode colors (you can define these)
             UIManager.put("Panel.background", new ColorUIResource(Color.WHITE));
